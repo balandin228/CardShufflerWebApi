@@ -1,0 +1,15 @@
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\bin\Debug\netcoreapp3.1\TestApi.CardShuffler.exe
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\bin\Debug\netcoreapp3.1\TestApi.CardShuffler.deps.json
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\bin\Debug\netcoreapp3.1\TestApi.CardShuffler.runtimeconfig.json
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\bin\Debug\netcoreapp3.1\TestApi.CardShuffler.runtimeconfig.dev.json
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\bin\Debug\netcoreapp3.1\TestApi.CardShuffler.dll
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\bin\Debug\netcoreapp3.1\TestApi.CardShuffler.pdb
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\bin\Debug\netcoreapp3.1\TestApi.CardShuffler.xml
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\obj\Debug\netcoreapp3.1\TestApi.CardShuffler.csprojAssemblyReference.cache
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\obj\Debug\netcoreapp3.1\TestApi.CardShuffler.AssemblyInfoInputs.cache
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\obj\Debug\netcoreapp3.1\TestApi.CardShuffler.AssemblyInfo.cs
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\obj\Debug\netcoreapp3.1\TestApi.CardShuffler.csproj.CoreCompileInputs.cache
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\obj\Debug\netcoreapp3.1\TestApi.CardShuffler.dll
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\obj\Debug\netcoreapp3.1\TestApi.CardShuffler.xml
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\obj\Debug\netcoreapp3.1\TestApi.CardShuffler.pdb
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.CardShuffler\obj\Debug\netcoreapp3.1\TestApi.CardShuffler.genruntimeconfig.cache

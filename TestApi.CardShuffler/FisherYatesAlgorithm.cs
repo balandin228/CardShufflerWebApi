@@ -28,6 +28,8 @@ namespace TestApi.CardShuffler
                     result[j] = obj;
                 }
             }
+
+            return result;
         }
     }
 }

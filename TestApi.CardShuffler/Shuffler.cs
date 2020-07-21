@@ -5,23 +5,23 @@ using System.Text;
 
 namespace TestApi.CardShuffler
 {
-    public abstract class Shuffler<T> : IShuffler<T>
+    public abstract class Shuffler : IShuffler
     {
-        private readonly IShuffleAlgorithm _defaultAlgorithm;
+        private readonly IShuffleAlgorithm<int> _defaultAlgorithm;
 
-        protected Shuffler(IShuffleAlgorithm algorithm)
+        protected Shuffler(IShuffleAlgorithm<int> algorithm)
         {
             _defaultAlgorithm = algorithm;
         }
 
-        public IEnumerable<T> Shuffle(IEnumerable<T> collection)
+        public IEnumerable<int> Shuffle(IEnumerable<int> collection)
         {
-            return _defaultAlgorithm.Shuffle<T>(collection);
+            return _defaultAlgorithm.Shuffle(collection);
         }
 
-        public IEnumerable<T> Shuffle(IEnumerable<T> collection, IShuffleAlgorithm algorithm)
+        public IEnumerable<int> Shuffle(IEnumerable<int> collection, IShuffleAlgorithm<int> algorithm)
         {
-            return algorithm.Shuffle<T>(collection);
+            return algorithm.Shuffle(collection);
         }
     }
 }

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace TestApi.CardShuffler
 {
-    public class MyTestCardShuffler : Shuffler<Object>
+    public class MyTestCardShuffler : Shuffler
     {
-        public MyTestCardShuffler(IShuffleAlgorithm algorithm) : base(algorithm)
+        public MyTestCardShuffler(IShuffleAlgorithm<int> algorithm) : base(algorithm)
         {
         }
     }

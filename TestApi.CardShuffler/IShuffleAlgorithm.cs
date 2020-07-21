@@ -5,8 +5,8 @@ using System.Text;
 
 namespace TestApi.CardShuffler
 {
-    public interface IShuffleAlgorithm
+    public interface IShuffleAlgorithm<T>
     {
-        IEnumerable<T> Shuffle<T>(IEnumerable<T> collection);
+        IEnumerable<T> Shuffle(IEnumerable<T> collection);
     }
 }

@@ -1,0 +1,5 @@
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\obj\Debug\netcoreapp3.1\TestApi.Web.csprojAssemblyReference.cache
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\obj\Debug\netcoreapp3.1\TestApi.Web.AssemblyInfoInputs.cache
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\obj\Debug\netcoreapp3.1\TestApi.Web.AssemblyInfo.cs
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\obj\Debug\netcoreapp3.1\TestApi.Web.csproj.CoreCompileInputs.cache
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\obj\Debug\netcoreapp3.1\TestApi.Web.MvcApplicationPartsAssemblyInfo.cache

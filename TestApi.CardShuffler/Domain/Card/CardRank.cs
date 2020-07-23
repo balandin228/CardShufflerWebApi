@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TestApi.Web.Domain.Card
+namespace TestApi.Core.Domain.Card
 {
     public enum CardRank
     {

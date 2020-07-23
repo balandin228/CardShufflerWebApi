@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TestApi.Web.Domain.Card
+namespace TestApi.Core.Domain.Card
 {
     public class Card : Entity<long>, ICard
     {
+
         public CardRank Rank { get; }
 
         public CardSuit Suit { get; }
@@ -21,5 +22,6 @@ namespace TestApi.Web.Domain.Card
             Rank = rank;
             Suit = suit;
         }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestApi.CardShuffler
+namespace TestApi.Core
 {
     class Program
     {

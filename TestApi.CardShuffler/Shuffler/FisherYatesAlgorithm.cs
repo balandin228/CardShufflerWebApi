@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace TestApi.CardShuffler
+namespace TestApi.Core.Shuffler
 {
     public class FisherYatesAlgorithm : IShuffleAlgorithm
     {

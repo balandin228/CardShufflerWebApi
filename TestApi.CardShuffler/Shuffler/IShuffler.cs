@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestApi.CardShuffler
+namespace TestApi.Core.Shuffler
 {
     public interface IShuffler
     {
@@ -11,13 +11,13 @@ namespace TestApi.CardShuffler
         /// </summary>
         /// <param name="collection"></param>
         /// <returns></returns>
-        IEnumerable<int> Shuffle(IEnumerable<int> collection);
+        IEnumerable<T> Shuffle<T>(IEnumerable<T> collection);
         /// <summary>
         /// Use custom algorithm to shuffle
         /// </summary>
         /// <param name="collection"></param>
         /// <param name="algorithm"> algorithm to shuffle</param>
         /// <returns></returns>
-        IEnumerable<int> Shuffle(IEnumerable<int> collection, IShuffleAlgorithm<int> algorithm);
+        IEnumerable<T> Shuffle<T>(IEnumerable<T> collection, IShuffleAlgorithm algorithm);
     }
 }

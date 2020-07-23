@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "77IvBw5jQ8bTMA42Gg2hiCWeZsfBvTaRaGUhZ6wcvKdzfDnh3hQ0eTcOZzXv6NCy+SPlVvc0CiuqOE9OAv84yw==",
+  "dgSpecHash": "Kzb8H/0hezR3BK1qENUVaWjkZ4F8kG6AQ+y8Glg3yAvY4mEF7vPgNkCitKpJWaVvLzG6pAMEXLuDmCQp84aZMw==",
   "success": true,
-  "projectFilePath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.CardShuffler.csproj",
+  "projectFilePath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

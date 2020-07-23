@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.CardShuffler.csproj",
-      "projectName": "TestApi.CardShuffler",
-      "projectPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.CardShuffler.csproj",
+      "projectUniqueName": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj",
+      "projectName": "TestApi.Core",
+      "projectPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj",
       "packagesPath": "C:\\Users\\79090\\.nuget\\packages\\",
       "outputPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\obj\\",
       "projectStyle": "PackageReference",

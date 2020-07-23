@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "981T10cyVz1EcuSqB8IUPNfTs+OUwa2IpaFWyDWB2rUZiV5ihKi4kXZTuO37Ypnsp6s+tVgUZljvC1b8yQ3X4A==",
+  "dgSpecHash": "h847wddOZpOX2aZwpw//FXnguQ95xrzgk5XL06ITSX4HPlJa39dgNDGbf2P/9k9rFtUx03lVuWhtK4+z+12jDQ==",
   "success": true,
   "projectFilePath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Web\\TestApi.Web.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\79090\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\79090\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\79090\\.nuget\\packages\\swashbuckle.aspnetcore\\5.5.1\\swashbuckle.aspnetcore.5.5.1.nupkg.sha512",
+    "C:\\Users\\79090\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.5.1\\swashbuckle.aspnetcore.swagger.5.5.1.nupkg.sha512",
+    "C:\\Users\\79090\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.5.1\\swashbuckle.aspnetcore.swaggergen.5.5.1.nupkg.sha512",
+    "C:\\Users\\79090\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.5.1\\swashbuckle.aspnetcore.swaggerui.5.5.1.nupkg.sha512"
+  ],
   "logs": []
 }

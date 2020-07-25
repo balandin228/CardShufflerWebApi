@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w+4kmN3jBoof7uJE1SXETtT/CQLW9WwrYjX8Ztj8vHGJmeWN76mxmVkeo/ufiXkRqHqsyMqKb0UOXimBMlHSjA==",
+  "dgSpecHash": "HUyVe39hQA7D9LnnRNn/kGHuWDYLtBu0ZUanmHSWeERs6ajgb3C0vP8/Gw61lMBZlQLcxIoHiV3qnbQQvO2vVw==",
   "success": true,
   "projectFilePath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Web\\TestApi.Web.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\79090\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.6\\microsoft.entityframeworkcore.3.1.6.nupkg.sha512",
     "C:\\Users\\79090\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.6\\microsoft.entityframeworkcore.abstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\79090\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.6\\microsoft.entityframeworkcore.analyzers.3.1.6.nupkg.sha512",
+    "C:\\Users\\79090\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.6\\microsoft.entityframeworkcore.relational.3.1.6.nupkg.sha512",
     "C:\\Users\\79090\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\79090\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.6\\microsoft.extensions.caching.abstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\79090\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.6\\microsoft.extensions.caching.memory.3.1.6.nupkg.sha512",

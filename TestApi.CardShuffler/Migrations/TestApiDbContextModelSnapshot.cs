@@ -15,19 +15,27 @@ namespace TestApi.Core.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
+                .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0-preview.7.20365.15");
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("TestApi.Core.Domain.Card.Card", b =>
                 {
                     b.Property<long>("Key")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
                         .HasColumnName("Id")
-                        .UseIdentityColumn();
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Rank")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Suit")
+                        .HasColumnType("int");
 
                     b.HasKey("Key");
+
+                    b.HasAlternateKey("Suit", "Rank");
 
                     b.ToTable("Cards");
                 });
@@ -36,9 +44,9 @@ namespace TestApi.Core.Migrations
                 {
                     b.Property<long>("Key")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
                         .HasColumnName("Id")
-                        .UseIdentityColumn();
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<long?>("CardKey")
                         .HasColumnType("bigint");

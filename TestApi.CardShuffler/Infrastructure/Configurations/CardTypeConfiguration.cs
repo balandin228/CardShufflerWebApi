@@ -15,6 +15,7 @@ namespace TestApi.Core.Infrastructure.Configurations
             builder.ToTable("Cards");
             builder.HasKey(x => x.Key);
             builder.Property(x => x.Key).HasColumnName("Id");
+            builder.HasAlternateKey(x=>new {x.Suit, x.Rank});
         }
     }
 }

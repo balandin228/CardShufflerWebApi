@@ -12,6 +12,7 @@ namespace TestApi.Core.Domain.Card
 
         public CardSuit Suit { get; }
 
+        public IQueryable<Deck.Deck> Decks { get; }
         public Card()
         {
 

@@ -7,7 +7,7 @@ namespace TestApi.Core.Domain.Deck
 {
     public class Deck : Entity<long>, IDeck
     {
-        public IEnumerable<Card.Card> Cards;
+        public IQueryable<Card.Card> Cards;
 
         public Deck()
         {

@@ -31,9 +31,9 @@ namespace TestApi.Core.DeckBuilder
         private static IEnumerable<Card> GetDefaultDeck()
         {
 
-            for(var i=0;i<14;i++)
-                for(var j=0;j<4;j++)
-                    yield return new Card((CardSuit)i,(CardRank)j);
+            for (var i = 0; i < 14; i++)
+                for (var j = 0; j < 4; j++)
+                    yield return new Card((CardSuit)i, (CardRank)j);
         }
 
         private static IEnumerable<Card> GetSmallDeck()

@@ -7,7 +7,7 @@ using TestApi.Core.Shuffler;
 
 namespace TestApi.Core.DeckBuilder
 {
-    public abstract class DeckBuilder
+    public class DeckBuilder : IDeckBuilder
     {
         private readonly IShuffler _shuffler;
         public IEnumerable<Card> Cards { get; private set; }

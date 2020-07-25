@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using TestApi.Core;
+using TestApi.Core.Shuffler;
 
 namespace TestApi.Web
 {
@@ -29,8 +30,6 @@ namespace TestApi.Web
         {
             services.AddControllers();
             services.AddMvcCore();
-            services.AddSingleton<IShuffleAlgorithm, FisherYatesAlgorithm>();
-            services.AddSingleton<IShuffler, DeckBuilder>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test Api", Version = "v1" });

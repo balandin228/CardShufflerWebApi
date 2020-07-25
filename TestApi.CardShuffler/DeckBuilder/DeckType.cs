@@ -4,7 +4,9 @@ using System.Text;
 
 namespace TestApi.Core.DeckBuilder
 {
-    interface DeckTypes
+    public enum DeckType
     {
+        Default,
+        SmallDeck
     }
 }

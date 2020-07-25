@@ -1,0 +1,26 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0cad6115_002Dbbab_002D40b0_002Db39f_002Daa3468421071/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Shuffle_Randomly #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.ShufflerTests.Should_Shuffle_Randomly&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a135f942_002D8eab_002D4974_002D9a98_002D1297986bb412/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Shuffle_Randomly #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.ShufflerTests.Should_Shuffle_Randomly&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=deb0451a_002D3552_002D4f21_002Db585_002D6873281b6a13/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Shuffle_Randomly" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.ShufflerTests.Should_Shuffle_Randomly&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f7ddda62_002Dbb08_002D46bf_002D86f1_002Df417ccfe6f93/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Shuffle_Randomly #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.ShufflerTests.Should_Shuffle_Randomly&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ff265096_002D630f_002D48c6_002Db5fd_002Db712b20fe128/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShufflerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.ShufflerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

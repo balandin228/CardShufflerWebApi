@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using TestApi.Core;
 using Microsoft.EntityFrameworkCore;
+using TestApi.Core.Domain.Card;
 using TestApi.Core.Infrastructure;
 using TestApi.Core.Shuffler;
 
@@ -33,7 +34,7 @@ namespace TestApi.Web
             services.AddControllers();
             services.AddMvcCore();
             services.AddDbContext<TestApiDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("TestApiDbContext"),
-                x => x.MigrationsAssembly("TestApi")));
+                x => x.MigrationsAssembly(typeof(Card).Assembly.FullName)));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test Api", Version = "v1" });

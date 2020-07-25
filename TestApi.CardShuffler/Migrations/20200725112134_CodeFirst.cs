@@ -2,7 +2,7 @@
 
 namespace TestApi.Core.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class CodeFirst : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,11 +11,14 @@ namespace TestApi.Core.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Rank = table.Column<int>(nullable: false),
+                    Suit = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cards", x => x.Id);
+                    table.UniqueConstraint("AK_Cards_Suit_Rank", x => new { x.Suit, x.Rank });
                 });
 
             migrationBuilder.CreateTable(

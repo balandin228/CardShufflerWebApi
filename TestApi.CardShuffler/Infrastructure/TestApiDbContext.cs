@@ -11,6 +11,7 @@ namespace TestApi.Core.Infrastructure
     {
         public TestApiDbContext(DbContextOptions options) : base(options)
         {
+            Database.EnsureCreated();
         }
 
         public DbSet<Card> Cards;

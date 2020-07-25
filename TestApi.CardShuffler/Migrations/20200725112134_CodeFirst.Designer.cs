@@ -10,8 +10,8 @@ using TestApi.Core.Infrastructure;
 namespace TestApi.Core.Migrations
 {
     [DbContext(typeof(TestApiDbContext))]
-    [Migration("20200725105400_addAlternativeKeyToCard")]
-    partial class addAlternativeKeyToCard
+    [Migration("20200725112134_CodeFirst")]
+    partial class CodeFirst
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

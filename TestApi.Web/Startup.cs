@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using TestApi.Core;
+using Microsoft.EntityFrameworkCore;
+using TestApi.Core.Infrastructure;
 using TestApi.Core.Shuffler;
 
 namespace TestApi.Web
@@ -30,6 +32,8 @@ namespace TestApi.Web
         {
             services.AddControllers();
             services.AddMvcCore();
+            services.AddDbContext<TestApiDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("TestApiDbContext"),
+                x => x.MigrationsAssembly("TestApi")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test Api", Version = "v1" });

@@ -35,6 +35,7 @@ namespace TestApi.Web
             services.AddMvcCore();
             services.AddDbContext<TestApiDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("TestApiDbContext"),
                 x => x.MigrationsAssembly(typeof(Card).Assembly.FullName)));
+            services.RegisterAllRepository();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test Api", Version = "v1" });

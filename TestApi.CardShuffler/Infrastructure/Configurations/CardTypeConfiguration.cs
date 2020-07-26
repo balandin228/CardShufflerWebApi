@@ -16,6 +16,19 @@ namespace TestApi.Core.Infrastructure.Configurations
             builder.HasKey(x => x.Key);
             builder.Property(x => x.Key).HasColumnName("Id");
             builder.HasAlternateKey(x=>new {x.Suit, x.Rank});
+
+            builder.HasData(GetDefaultDeck());
+        }
+
+        private IEnumerable<Card> GetDefaultDeck()
+        {
+            var id = 1;
+            for (var i = 0; i < 14; i++)
+            for (var j = 0; j < 4; j++)
+            {
+                yield return new Card(id,(CardSuit) i, (CardRank) j);
+                id++;
+            }
         }
     }
 }

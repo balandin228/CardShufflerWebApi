@@ -23,6 +23,10 @@ namespace TestApi.Core.Domain.Card
             Rank = rank;
             Suit = suit;
         }
-
+        public Card(long key,CardSuit suit, CardRank rank): base(key)
+        {
+            Rank = rank;
+            Suit = suit;
+        }
     }
 }

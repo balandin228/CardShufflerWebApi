@@ -11,7 +11,7 @@ namespace TestApi.Core.Infrastructure.Repositories
 {
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity<long>
     {
-        protected TestApiDbContext Context { get; }
+        public TestApiDbContext Context { get; }
         private DbSet<TEntity> _items { get; }
         public virtual IQueryable<TEntity> Items => _items;
         protected Repository(TestApiDbContext context)

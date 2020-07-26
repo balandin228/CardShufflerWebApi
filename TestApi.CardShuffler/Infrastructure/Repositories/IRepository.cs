@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using TestApi.Core.Domain;
 
 namespace TestApi.Core.Infrastructure.Repositories
@@ -12,5 +13,6 @@ namespace TestApi.Core.Infrastructure.Repositories
         Task AddRangeAsync(IEnumerable<TEntity> entities);
         Task RemoveAsync(TEntity entity);
         Task RemoveRangeAsync(IEnumerable<TEntity> entities);
+        TestApiDbContext Context { get; }
     }
 }

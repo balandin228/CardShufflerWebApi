@@ -14,6 +14,10 @@ namespace TestApi.Core.Infrastructure.Configurations
             builder.ToTable("Decks");
             builder.HasKey(x => x.Key);
             builder.Property(x => x.Key).HasColumnName("Id");
+
+            builder.HasMany(x => x.CardInDecks)
+                .WithOne(x => x.Deck)
+                .HasForeignKey(x => x.DeckId);
         }
     }
 }

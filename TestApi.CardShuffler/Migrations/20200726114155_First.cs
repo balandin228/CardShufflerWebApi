@@ -2,7 +2,7 @@
 
 namespace TestApi.Core.Migrations
 {
-    public partial class CodeFirst : Migration
+    public partial class First : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,33 +26,60 @@ namespace TestApi.Core.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CardKey = table.Column<long>(nullable: true)
+                        .Annotation("SqlServer:Identity", "1, 1")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Decks", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CardInDecks",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DeckId = table.Column<long>(nullable: false),
+                    CardId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CardInDecks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Decks_Cards_CardKey",
-                        column: x => x.CardKey,
+                        name: "FK_CardInDecks_Cards_CardId",
+                        column: x => x.CardId,
                         principalTable: "Cards",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CardInDecks_Decks_DeckId",
+                        column: x => x.DeckId,
+                        principalTable: "Decks",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Decks_CardKey",
-                table: "Decks",
-                column: "CardKey");
+                name: "IX_CardInDecks_CardId",
+                table: "CardInDecks",
+                column: "CardId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CardInDecks_DeckId",
+                table: "CardInDecks",
+                column: "DeckId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Decks");
+                name: "CardInDecks");
 
             migrationBuilder.DropTable(
                 name: "Cards");
+
+            migrationBuilder.DropTable(
+                name: "Decks");
         }
     }
 }

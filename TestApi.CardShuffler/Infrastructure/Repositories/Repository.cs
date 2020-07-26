@@ -9,7 +9,7 @@ using TestApi.Core.Domain;
 
 namespace TestApi.Core.Infrastructure.Repositories
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity>, IReadOnlyRepository<TEntity> where TEntity : Entity<long>
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity<long>
     {
         protected TestApiDbContext Context { get; }
         private DbSet<TEntity> _items { get; }

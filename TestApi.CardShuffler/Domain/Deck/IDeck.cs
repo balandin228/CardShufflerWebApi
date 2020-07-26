@@ -9,5 +9,7 @@ namespace TestApi.Core.Domain.Deck
     {
         long Key { get; }
 
+        string Name { get; }
+
     }
 }

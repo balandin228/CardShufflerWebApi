@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using TestApi.Core.Infrastructure.Repositories;
 
 namespace TestApi.Web
 {
-    public class ServicesExtentions
+    public static class ServicesExtentions
     {
+        public static void RegisterAllRepository(this IServiceCollection services)
+        {
+            services.AddTransient<IDeckRepository, DeckRepository>();
+            services.AddTransient<ICardInDeckRepository, CardInDeckRepository>();
+            services.AddTransient<ICardRepository, CardRepository>();
+        }
     }
 }

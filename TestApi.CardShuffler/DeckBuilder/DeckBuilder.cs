@@ -11,13 +11,13 @@ namespace TestApi.Core.DeckBuilder
     {
         private readonly IShuffler _shuffler;
         public IEnumerable<Card> Cards { get; private set; }
-        protected DeckBuilder()
+        public DeckBuilder()
         {
             Cards = new DeckBuilderOptions().Deck;
             _shuffler = new DefaultShuffler();
         }
 
-        protected DeckBuilder(IShuffler shuffler,DeckBuilderOptions options)
+        public DeckBuilder(IShuffler shuffler, DeckBuilderOptions options)
         {
             Cards = options.Deck;
             _shuffler = shuffler;

@@ -9,7 +9,7 @@ using TestApi.Core.Infrastructure;
 namespace TestApi.Core.Migrations
 {
     [DbContext(typeof(TestApiDbContext))]
-    [Migration("20200726114155_First")]
+    [Migration("20200726185252_First")]
     partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,7 +72,14 @@ namespace TestApi.Core.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Key");
+
+                    b.HasIndex("Name")
+                        .IsUnique()
+                        .HasFilter("[Name] IS NOT NULL");
 
                     b.ToTable("Decks");
                 });

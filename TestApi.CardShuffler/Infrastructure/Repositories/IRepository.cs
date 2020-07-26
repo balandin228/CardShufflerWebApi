@@ -6,7 +6,7 @@ using TestApi.Core.Domain;
 
 namespace TestApi.Core.Infrastructure.Repositories
 {
-    public interface IRepository<TEntity> where TEntity : Entity<long>
+    public interface IRepository<TEntity> : IReadOnlyRepository<TEntity> where TEntity : Entity<long>
     {
         Task<TEntity> AddAsync(TEntity entity);
         Task AddRangeAsync(IEnumerable<TEntity> entities);

@@ -14,6 +14,7 @@ namespace TestApi.Core.Infrastructure.Configurations
             builder.ToTable("Decks");
             builder.HasKey(x => x.Key);
             builder.Property(x => x.Key).HasColumnName("Id");
+            builder.HasIndex(x => x.Name).IsUnique();
 
             builder.HasMany(x => x.CardInDecks)
                 .WithOne(x => x.Deck)

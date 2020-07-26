@@ -26,7 +26,8 @@ namespace TestApi.Core.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -68,6 +69,13 @@ namespace TestApi.Core.Migrations
                 name: "IX_CardInDecks_DeckId",
                 table: "CardInDecks",
                 column: "DeckId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Decks_Name",
+                table: "Decks",
+                column: "Name",
+                unique: true,
+                filter: "[Name] IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

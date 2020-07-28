@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using TestApi.Core.Domain;
-using TestApi.Core.Domain.Card;
 
 namespace TestApi.Core.DeckBuilder
 {

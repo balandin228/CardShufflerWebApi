@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TestApi.Core.Domain.Card;
+﻿using TestApi.Core.Domain.Card;
 
 namespace TestApi.Core.Infrastructure.Repositories
 {
@@ -9,7 +6,6 @@ namespace TestApi.Core.Infrastructure.Repositories
     {
         public CardRepository(TestApiDbContext context) : base(context)
         {
-
         }
     }
 }

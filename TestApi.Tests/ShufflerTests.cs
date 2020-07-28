@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
+﻿using System.Collections.Generic;
 using FluentAssertions;
-using FluentAssertions.Execution;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
 using TestApi.Core.Shuffler;
 
 namespace TestApi.Tests
@@ -13,6 +8,11 @@ namespace TestApi.Tests
     [TestFixture]
     public class ShufflerTests
     {
+        [SetUp]
+        public void SetUp()
+        {
+        }
+
         private static readonly IShuffler _shuffler = new DefaultShuffler();
 
         private static List<int> TestList
@@ -20,16 +20,10 @@ namespace TestApi.Tests
             get
             {
                 var result = new List<int>();
-                for(int i = 0; i<100;i++)
+                for (var i = 0; i < 100; i++)
                     result.Add(i);
                 return result;
             }
-        }
-
-        [SetUp]
-        public void SetUp()
-        {
-
         }
 
         public static class RandomShuffleSource
@@ -42,20 +36,8 @@ namespace TestApi.Tests
             {
                 new TestCaseData(testData1).SetName("testData1"),
                 new TestCaseData(testData2).SetName("testData2"),
-                new TestCaseData(testData3).SetName("testData3"),
+                new TestCaseData(testData3).SetName("testData3")
             };
-        }
-        //к сожалению, этот тест должен падать. Так как в fluent Assertions можно сравнить, только следование строгому порядку
-        //а не наоборот. Во всяком случае, я не нашел как это сделать, а писать что-то кастомное для тестового, не имеет смысла, наверное
-        [Test]
-        [TestCaseSource(typeof(RandomShuffleSource),"TestCases")]
-        public void Should_Shuffle_Randomly(IEnumerable<int> data)
-        {
-
-            var result1 = _shuffler.Shuffle(data);
-            var result2 = _shuffler.Shuffle(data);
-
-            result2.Should().BeEquivalentTo(result1, o => o.WithStrictOrdering(),"That's ok!");
         }
 
         public static IEnumerable<int> ShuffleResult(List<int> data)
@@ -63,6 +45,16 @@ namespace TestApi.Tests
             return _shuffler.Shuffle(data);
         }
 
+        //к сожалению, этот тест должен падать. Так как в fluent Assertions можно сравнить, только следование строгому порядку
+        //а не наоборот. Во всяком случае, я не нашел как это сделать, а писать что-то кастомное для тестового, не имеет смысла, наверное
+        [Test]
+        [TestCaseSource(typeof(RandomShuffleSource), "TestCases")]
+        public void Should_Shuffle_Randomly(IEnumerable<int> data)
+        {
+            var result1 = _shuffler.Shuffle(data);
+            var result2 = _shuffler.Shuffle(data);
 
+            result2.Should().BeEquivalentTo(result1, o => o.WithStrictOrdering(), "That's ok!");
+        }
     }
 }

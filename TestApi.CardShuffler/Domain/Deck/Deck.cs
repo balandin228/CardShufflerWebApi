@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TestApi.Core.Domain.Deck
 {
     public class Deck : Entity<long>, IDeck
     {
-        public virtual List<CardInDeck> CardInDecks { get; }
-        public string Name { get; }
-
         public Deck()
         {
             CardInDecks = new List<CardInDeck>();
@@ -19,5 +13,8 @@ namespace TestApi.Core.Domain.Deck
         {
             Name = name;
         }
+
+        public virtual List<CardInDeck> CardInDecks { get; }
+        public string Name { get; }
     }
 }

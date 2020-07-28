@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using TestApi.Core.Domain.Deck;
 
@@ -11,7 +8,6 @@ namespace TestApi.Core.Infrastructure.Repositories
     {
         public DeckRepository(TestApiDbContext context) : base(context)
         {
-
         }
 
         protected override IQueryable<Deck> Items => base.Items

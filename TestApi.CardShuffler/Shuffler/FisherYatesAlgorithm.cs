@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
 
 namespace TestApi.Core.Shuffler
 {
@@ -14,6 +11,7 @@ namespace TestApi.Core.Shuffler
         {
             _random = new Random(DateTime.Now.Millisecond);
         }
+
         public IEnumerable<T> Shuffle<T>(IEnumerable<T> collection)
         {
             var result = new List<T>();
@@ -21,7 +19,9 @@ namespace TestApi.Core.Shuffler
             {
                 var j = _random.Next(result.Count + 1);
                 if (j == result.Count)
+                {
                     result.Add(obj);
+                }
                 else
                 {
                     result.Add(result[j]);

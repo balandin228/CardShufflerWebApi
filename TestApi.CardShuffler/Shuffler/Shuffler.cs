@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TestApi.Core.Shuffler
 {
@@ -14,6 +11,7 @@ namespace TestApi.Core.Shuffler
         {
             _defaultAlgorithm = new FisherYatesAlgorithm();
         }
+
         protected Shuffler(IShuffleAlgorithm algorithm)
         {
             _defaultAlgorithm = algorithm;

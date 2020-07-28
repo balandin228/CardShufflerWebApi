@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace TestApi.Core.Domain
+﻿namespace TestApi.Core.Domain
 {
     public abstract class Entity<TKey>
     {
@@ -14,9 +9,8 @@ namespace TestApi.Core.Domain
 
         protected Entity()
         {
-
         }
 
-        public TKey Key { get; private set; }
+        public TKey Key { get; }
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TestApi.Core.Domain;
@@ -11,14 +10,16 @@ namespace TestApi.Core.Infrastructure.Repositories
 {
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity<long>
     {
-        public TestApiDbContext Context { get; }
-        private DbSet<TEntity> _items { get; }
-        protected virtual IQueryable<TEntity> Items => _items;
         protected Repository(TestApiDbContext context)
         {
             Context = context;
             _items = Context.Set<TEntity>();
         }
+
+        private DbSet<TEntity> _items { get; }
+        protected virtual IQueryable<TEntity> Items => _items;
+        public TestApiDbContext Context { get; }
+
         public async Task<TEntity> AddAsync(TEntity entity)
         {
             var entry = await _items.AddAsync(entity);
@@ -51,6 +52,7 @@ namespace TestApi.Core.Infrastructure.Repositories
         {
             return Items.Where(options).ToArrayAsync();
         }
+
         public Task<TEntity> FirstAsync()
         {
             return Items.FirstAsync();
@@ -75,7 +77,6 @@ namespace TestApi.Core.Infrastructure.Repositories
         {
             return options.Aggregate(Items,
                 (current, includeOptions) => current.Include(includeOptions)).ToArrayAsync();
-
         }
     }
 }

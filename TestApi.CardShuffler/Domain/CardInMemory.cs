@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TestApi.Core.Domain.Card;
+﻿using TestApi.Core.Domain.Card;
 
 namespace TestApi.Core.Domain
 {
     public class CardInMemory
     {
-        public CardSuit Suit { get; }
-        public CardRank Rank { get; }
-
         public CardInMemory()
         {
         }
@@ -19,5 +13,8 @@ namespace TestApi.Core.Domain
             Suit = suit;
             Rank = rank;
         }
+
+        public CardSuit Suit { get; }
+        public CardRank Rank { get; }
     }
 }

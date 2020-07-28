@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TestApi.Core.Shuffler
 {
     public interface IShuffler
     {
         /// <summary>
-        /// Use default algorithm to shuffle
+        ///     Use default algorithm to shuffle
         /// </summary>
         /// <param name="collection"></param>
         /// <returns></returns>
         IEnumerable<T> Shuffle<T>(IEnumerable<T> collection);
+
         /// <summary>
-        /// Use custom algorithm to shuffle
+        ///     Use custom algorithm to shuffle
         /// </summary>
         /// <param name="collection"></param>
         /// <param name="algorithm"> algorithm to shuffle</param>

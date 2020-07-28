@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using TestApi.Core.DeckBuilder;
 using TestApi.Core.Domain;
-using TestApi.Core.Domain.Card;
 using TestApi.Core.Domain.Deck;
 using TestApi.Core.Infrastructure.Repositories;
 using TestApi.Web.Dtos;
@@ -19,12 +15,14 @@ namespace TestApi.Web.Controllers
     [ApiController]
     public class DeckController : ControllerBase
     {
-        private readonly IDeckRepository _deckRepository;
-        private readonly IDeckBuilder _deckBuilder;
         private readonly ICardInDeckRepository _cardInDeckRepository;
         private readonly ICardRepository _cardRepository;
+        private readonly IDeckBuilder _deckBuilder;
+        private readonly IDeckRepository _deckRepository;
         private readonly IMapper _mapper;
-        public DeckController(IDeckRepository deckRepository, ICardInDeckRepository cardInDeckRepository, IDeckBuilder deckBuilder,
+
+        public DeckController(IDeckRepository deckRepository, ICardInDeckRepository cardInDeckRepository,
+            IDeckBuilder deckBuilder,
             ICardRepository cardRepository, IMapper mapper)
         {
             _deckRepository = deckRepository;
@@ -35,7 +33,7 @@ namespace TestApi.Web.Controllers
         }
 
         /// <summary>
-        /// Показать карты колоды
+        ///     Показать карты колоды
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -43,12 +41,12 @@ namespace TestApi.Web.Controllers
         [Route("Decks/{id}")]
         public async Task<ActionResult<DeckDto>> GetDeckById(long id)
         {
-            var deck = await _deckRepository.FirstAsync(x => x.Key==id);
+            var deck = await _deckRepository.FirstAsync(x => x.Key == id);
             return _mapper.Map<DeckDto>(deck);
         }
 
         /// <summary>
-        /// Перетасовать и сохранить колоду
+        ///     Перетасовать и сохранить колоду
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -70,21 +68,21 @@ namespace TestApi.Web.Controllers
             await _cardInDeckRepository.Context.SaveChangesAsync();
             return _mapper.Map<DeckDto>(deck);
         }
+
         /// <summary>
-        /// Посмотреть список доступных колод
+        ///     Посмотреть список доступных колод
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         [Route("Decks")]
         public async Task<ActionResult<List<GetDecksDto>>> GetDecks()
         {
-            
             var result = await _deckRepository.ListAsync();
             return _mapper.Map<List<GetDecksDto>>(result);
         }
 
         /// <summary>
-        /// Создать новую колоду
+        ///     Создать новую колоду
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -102,7 +100,7 @@ namespace TestApi.Web.Controllers
             {
                 var card = await _cardRepository.FirstAsync(x =>
                     x.Suit == cardInMemory.Suit && x.Rank == cardInMemory.Rank);
-                toAdd.Add(new CardInDeck(){CardId = card.Key,DeckId = deck.Key,NumberInDeck = i});
+                toAdd.Add(new CardInDeck {CardId = card.Key, DeckId = deck.Key, NumberInDeck = i});
                 i++;
             }
 

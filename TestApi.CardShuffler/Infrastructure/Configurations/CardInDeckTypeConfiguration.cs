@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TestApi.Core.Domain;
-using TestApi.Core.Domain.Card;
 
 namespace TestApi.Core.Infrastructure.Configurations
 {
@@ -19,7 +15,7 @@ namespace TestApi.Core.Infrastructure.Configurations
             builder.Property(x => x.Key).HasColumnName("Id");
             builder.HasOne(x => x.Card)
                 .WithMany(x => x.CardInDecks)
-                .HasForeignKey(x=>x.CardId).HasConstraintName("Card");
+                .HasForeignKey(x => x.CardId).HasConstraintName("Card");
             builder.HasOne(x => x.Deck)
                 .WithMany(x => x.CardInDecks)
                 .HasForeignKey(x => x.DeckId).HasConstraintName("Deck");

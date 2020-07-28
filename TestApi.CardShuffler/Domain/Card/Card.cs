@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TestApi.Core.Domain.Card
 {
     public class Card : Entity<long>, ICard
     {
-
-        public CardSuit Suit { get; }
-        public CardRank Rank { get; }
-
-
-        public List<CardInDeck> CardInDecks { get; }
         public Card()
         {
             CardInDecks = new List<CardInDeck>();
@@ -23,10 +14,17 @@ namespace TestApi.Core.Domain.Card
             Rank = rank;
             Suit = suit;
         }
-        public Card(long key,CardSuit suit, CardRank rank): base(key)
+
+        public Card(long key, CardSuit suit, CardRank rank) : base(key)
         {
             Suit = suit;
             Rank = rank;
         }
+
+
+        public List<CardInDeck> CardInDecks { get; }
+
+        public CardSuit Suit { get; }
+        public CardRank Rank { get; }
     }
 }

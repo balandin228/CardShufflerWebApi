@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TestApi.Core.Domain;
-using TestApi.Core.Domain.Card;
-using TestApi.Core.Domain.Deck;
 using TestApi.Core.Shuffler;
 
 namespace TestApi.Core.DeckBuilder
@@ -12,8 +8,7 @@ namespace TestApi.Core.DeckBuilder
     public class DeckBuilder : IDeckBuilder
     {
         private readonly IShuffler _shuffler;
-        private DeckBuilderOptions Options { get; set; }
-        public List<CardInMemory> Cards { get; private set; }
+
         public DeckBuilder()
         {
             Options = new DeckBuilderOptions();
@@ -28,15 +23,19 @@ namespace TestApi.Core.DeckBuilder
             _shuffler = shuffler;
         }
 
+        private DeckBuilderOptions Options { get; set; }
+        public List<CardInMemory> Cards { get; private set; }
+
         public List<CardInMemory> Shuffle()
         {
-           return _shuffler.Shuffle(Cards).ToList();
+            return _shuffler.Shuffle(Cards).ToList();
         }
 
         public List<T> Shuffle<T>(IEnumerable<T> collection)
         {
             return _shuffler.Shuffle(collection).ToList();
         }
+
         public List<CardInMemory> CreateDeck()
         {
             Cards = Options.Deck.ToList();
@@ -47,6 +46,5 @@ namespace TestApi.Core.DeckBuilder
         {
             Options = options;
         }
-
     }
 }

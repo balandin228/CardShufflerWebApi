@@ -13,9 +13,9 @@ namespace TestApi.Tests
     [TestFixture]
     public class ShufflerTests
     {
-        private static IShuffler _shuffler = new DefaultShuffler();
+        private static readonly IShuffler _shuffler = new DefaultShuffler();
 
-        private static List<int> testList
+        private static List<int> TestList
         {
             get
             {
@@ -34,9 +34,9 @@ namespace TestApi.Tests
 
         public static class RandomShuffleSource
         {
-            private static readonly IEnumerable<int> testData1 = ShuffleResult(testList);
-            private static readonly IEnumerable<int> testData2 = ShuffleResult(testList);
-            private static readonly IEnumerable<int> testData3 = ShuffleResult(testList);
+            private static readonly IEnumerable<int> testData1 = ShuffleResult(TestList);
+            private static readonly IEnumerable<int> testData2 = ShuffleResult(TestList);
+            private static readonly IEnumerable<int> testData3 = ShuffleResult(TestList);
 
             private static readonly TestCaseData[] TestCases =
             {

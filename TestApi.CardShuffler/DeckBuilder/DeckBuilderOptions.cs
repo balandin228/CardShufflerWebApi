@@ -35,14 +35,14 @@ namespace TestApi.Core.DeckBuilder
 
             for (var i = 0; i < 14; i++)
                 for (var j = 0; j < 4; j++)
-                    yield return new CardInMemory((CardSuit)i, (CardRank)j);
+                    yield return new CardInMemory((CardSuit)j, (CardRank)i);
         }
 
         private static IEnumerable<CardInMemory> GetSmallDeck()
         {
             for (var i = 5; i < 14; i++)
                 for (var j = 0; j < 4; j++)
-                    yield return new CardInMemory((CardSuit)i, (CardRank)j);
+                    yield return new CardInMemory((CardSuit)j, (CardRank)i);
         }
     }
 }

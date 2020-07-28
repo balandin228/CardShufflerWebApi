@@ -4,6 +4,11 @@
     &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.ShufflerTests.Should_Shuffle_Randomly&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=114bcd86_002Dfd9d_002D42e6_002D9a59_002D4a4e591ed2df/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DeckBuilderCreateDeck_Should_GiveNotLazyCollection" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.DeckBuilderTests.DeckBuilderCreateDeck_Should_GiveNotLazyCollection&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a135f942_002D8eab_002D4974_002D9a98_002D1297986bb412/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Shuffle_Randomly #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.ShufflerTests.Should_Shuffle_Randomly&lt;/TestId&gt;&#xD;

@@ -9,7 +9,7 @@ using TestApi.Core.Infrastructure;
 namespace TestApi.Core.Migrations
 {
     [DbContext(typeof(TestApiDbContext))]
-    [Migration("20200728201848_Finally")]
+    [Migration("20200728210751_Finally")]
     partial class Finally
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,6 +18,8 @@ namespace TestApi.Core.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                .HasAnnotation("SqlServer:IdentitySeed", 1)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("TestApi.Core.Domain.Card.Card", b =>

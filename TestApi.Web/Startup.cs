@@ -14,6 +14,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using TestApi.Core;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 using TestApi.Core.DeckBuilder;
 using TestApi.Core.Domain;
 using TestApi.Core.Domain.Card;
@@ -38,7 +41,8 @@ namespace TestApi.Web
         {
             services.AddControllers();
             services.AddMvcCore();
-            services.AddDbContext<TestApiDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("TestApiDbContext"),
+            services.AddDbContext<TestApiDbContext>(opt => opt.UseSqlServer(
+                Configuration.GetConnectionString("TestApiDbContext"),
                 x => x.MigrationsAssembly(typeof(Card).Assembly.FullName)));
             services.RegisterAllRepository();
             services.AddTransient<IDeckBuilder, DeckBuilder>();
@@ -48,10 +52,10 @@ namespace TestApi.Web
                 cfg.CreateMap<CardInDeck, CardDto>()
                     .ForMember(x => x.Suit,
                         opt => opt.MapFrom(x => x.Card.Suit))
-                    .ForMember(x=>x.Rank,
-                        opt=>opt.MapFrom(x=>x.Card.Rank));
+                    .ForMember(x => x.Rank,
+                        opt => opt.MapFrom(x => x.Card.Rank));
                 cfg.CreateMap<Deck, DeckDto>()
-                    .ForMember(x => x.Id, 
+                    .ForMember(x => x.Id,
                         opt => opt.MapFrom(x => x.Key))
                     .ForMember(x => x.Card,
                         opt => opt
@@ -62,10 +66,14 @@ namespace TestApi.Web
                     .ForMember(x => x.Id,
                         opt => opt.MapFrom(x => x.Key));
             });
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Test Api", Version = "v1"}); });
+
+            services.AddMvc().AddJsonOptions(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test Api", Version = "v1" });
-            });
+                options.JsonSerializerOptions = DefaultValueHandling.Populate;
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                options.SerializerSettings.Converters.Add(new StringEnumConverter());
+            })
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using TestApi.Core.Domain;
 using TestApi.Core.Domain.Card;
 using TestApi.Core.Domain.Deck;
 using TestApi.Core.Infrastructure.Repositories;
+using TestApi.Web.Dtos;
 
 namespace TestApi.Web.Controllers
 {
@@ -21,27 +23,38 @@ namespace TestApi.Web.Controllers
         private readonly IDeckBuilder _deckBuilder;
         private readonly ICardInDeckRepository _cardInDeckRepository;
         private readonly ICardRepository _cardRepository;
+        private readonly IMapper _mapper;
         public DeckController(IDeckRepository deckRepository, ICardInDeckRepository cardInDeckRepository, IDeckBuilder deckBuilder,
-            ICardRepository cardRepository)
+            ICardRepository cardRepository, IMapper mapper)
         {
             _deckRepository = deckRepository;
             _deckBuilder = deckBuilder;
             _cardInDeckRepository = cardInDeckRepository;
             _cardRepository = cardRepository;
+            _mapper = mapper;
         }
 
-
+        /// <summary>
+        /// Показать карты колоды
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("Decks/{id}")]
-        public async Task<ActionResult<List<CardInMemory>>> GetDeckById(long id)
+        public async Task<ActionResult<DeckDto>> GetDeckById(long id)
         {
             var deck = await _deckRepository.FirstAsync(x => x.Key==id);
-            return deck.CardInDecks.OrderBy(x=>x.NumberInDeck).Select(x=>x.Card).Select(x=>new CardInMemory(x.Suit,x.Rank)).ToList();
+            return _mapper.Map<DeckDto>(deck);
         }
 
+        /// <summary>
+        /// Перетасовать и сохранить колоду
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("Decks/{id}/Shuffle")]
-        public async Task<ActionResult<List<CardInMemory>>> ShuffleDeck(long id)
+        public async Task<ActionResult<DeckDto>> ShuffleDeck(long id)
         {
             var deck = await _deckRepository.FirstAsync(x => x.Key == id);
             var notShuffled = deck.CardInDecks;
@@ -55,21 +68,26 @@ namespace TestApi.Web.Controllers
             }
 
             await _cardInDeckRepository.Context.SaveChangesAsync();
-            return deck.CardInDecks
-                .OrderBy(x => x.NumberInDeck)
-                .Select(x=>x.Card)
-                .Select(x=>new CardInMemory(x.Suit,x.Rank))
-                .ToList();
+            return _mapper.Map<DeckDto>(deck);
         }
+        /// <summary>
+        /// Посмотреть список доступных колод
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("Decks")]
-        public async Task<ActionResult<List<string>>> GetDecksNames()
+        public async Task<ActionResult<List<GetDecksDto>>> GetDecks()
         {
             
             var result = await _deckRepository.ListAsync();
-            return result.Select(d => d.Name).ToList();
+            return _mapper.Map<List<GetDecksDto>>(result);
         }
 
+        /// <summary>
+        /// Создать новую колоду
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("CreateDeck")]
         public async Task<ActionResult> CreateDeck(string name)

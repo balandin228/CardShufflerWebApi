@@ -57,3 +57,8 @@ F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\bin\Debug\netcoreapp3.1
 F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\bin\Debug\netcoreapp3.1\AutoMapper.dll
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\obj\Debug\netcoreapp3.1\TestApi.Web.csproj.CoreCompileInputs.cache
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\obj\Debug\netcoreapp3.1\TestApi.Web.MvcApplicationPartsAssemblyInfo.cs
+F:\Programming\Github\OOP\CardShufflerWebApi\TestApi.Web\obj\Debug\netcoreapp3.1\TestApi.Web.MvcApplicationPartsAssemblyInfo.cache

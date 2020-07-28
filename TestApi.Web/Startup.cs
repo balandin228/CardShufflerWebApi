@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,9 +15,12 @@ using Microsoft.OpenApi.Models;
 using TestApi.Core;
 using Microsoft.EntityFrameworkCore;
 using TestApi.Core.DeckBuilder;
+using TestApi.Core.Domain;
 using TestApi.Core.Domain.Card;
+using TestApi.Core.Domain.Deck;
 using TestApi.Core.Infrastructure;
 using TestApi.Core.Shuffler;
+using TestApi.Web.Dtos;
 
 namespace TestApi.Web
 {
@@ -38,7 +42,26 @@ namespace TestApi.Web
                 x => x.MigrationsAssembly(typeof(Card).Assembly.FullName)));
             services.RegisterAllRepository();
             services.AddTransient<IDeckBuilder, DeckBuilder>();
-            services.AddAuto
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.CreateMap<Card, CardDto>();
+                cfg.CreateMap<CardInDeck, CardDto>()
+                    .ForMember(x => x.Suit,
+                        opt => opt.MapFrom(x => x.Card.Suit))
+                    .ForMember(x=>x.Rank,
+                        opt=>opt.MapFrom(x=>x.Card.Rank));
+                cfg.CreateMap<Deck, DeckDto>()
+                    .ForMember(x => x.Id, 
+                        opt => opt.MapFrom(x => x.Key))
+                    .ForMember(x => x.Card,
+                        opt => opt
+                            .MapFrom((deck, deckDto, i, context) => deck.CardInDecks
+                                .OrderBy(cd => cd.NumberInDeck)
+                                .Select(c => context.Mapper.Map<CardDto>(c))));
+                cfg.CreateMap<Deck, GetDecksDto>()
+                    .ForMember(x => x.Id,
+                        opt => opt.MapFrom(x => x.Key));
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test Api", Version = "v1" });

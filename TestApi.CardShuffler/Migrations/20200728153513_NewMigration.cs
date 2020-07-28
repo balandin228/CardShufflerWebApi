@@ -2,7 +2,7 @@
 
 namespace TestApi.Core.Migrations
 {
-    public partial class First : Migration
+    public partial class NewMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,19 +41,20 @@ namespace TestApi.Core.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DeckId = table.Column<long>(nullable: false),
-                    CardId = table.Column<long>(nullable: false)
+                    CardId = table.Column<long>(nullable: false),
+                    NumberInDeck = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CardInDecks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CardInDecks_Cards_CardId",
+                        name: "Card",
                         column: x => x.CardId,
                         principalTable: "Cards",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CardInDecks_Decks_DeckId",
+                        name: "Deck",
                         column: x => x.DeckId,
                         principalTable: "Decks",
                         principalColumn: "Id",

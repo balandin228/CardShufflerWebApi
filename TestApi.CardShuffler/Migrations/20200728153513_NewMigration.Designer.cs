@@ -9,8 +9,8 @@ using TestApi.Core.Infrastructure;
 namespace TestApi.Core.Migrations
 {
     [DbContext(typeof(TestApiDbContext))]
-    [Migration("20200726193757_First")]
-    partial class First
+    [Migration("20200728153513_NewMigration")]
+    partial class NewMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -388,10 +388,15 @@ namespace TestApi.Core.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<long>("CardId")
+                        .HasColumnName("CardId")
                         .HasColumnType("bigint");
 
                     b.Property<long>("DeckId")
+                        .HasColumnName("DeckId")
                         .HasColumnType("bigint");
+
+                    b.Property<int>("NumberInDeck")
+                        .HasColumnType("int");
 
                     b.HasKey("Key");
 
@@ -427,12 +432,14 @@ namespace TestApi.Core.Migrations
                     b.HasOne("TestApi.Core.Domain.Card.Card", "Card")
                         .WithMany("CardInDecks")
                         .HasForeignKey("CardId")
+                        .HasConstraintName("Card")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TestApi.Core.Domain.Deck.Deck", "Deck")
                         .WithMany("CardInDecks")
                         .HasForeignKey("DeckId")
+                        .HasConstraintName("Deck")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

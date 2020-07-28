@@ -15,10 +15,6 @@ namespace TestApi.Core.Infrastructure.Configurations
             builder.HasKey(x => x.Key);
             builder.Property(x => x.Key).HasColumnName("Id");
             builder.HasIndex(x => x.Name).IsUnique();
-
-            builder.HasMany(x => x.CardInDecks)
-                .WithOne(x => x.Deck)
-                .HasForeignKey(x => x.DeckId);
         }
     }
 }

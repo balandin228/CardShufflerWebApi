@@ -22,5 +22,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ff265096_002D630f_002D48c6_002Db5fd_002Db712b20fe128/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShufflerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.ShufflerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0797C8AC-5597-4ABA-AB2F-1F3D624B937B::.NETCoreApp,Version=v3.1::TestApi.Tests.DeckBuilderTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

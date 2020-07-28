@@ -38,6 +38,7 @@ namespace TestApi.Web
                 x => x.MigrationsAssembly(typeof(Card).Assembly.FullName)));
             services.RegisterAllRepository();
             services.AddTransient<IDeckBuilder, DeckBuilder>();
+            services.AddAuto
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test Api", Version = "v1" });

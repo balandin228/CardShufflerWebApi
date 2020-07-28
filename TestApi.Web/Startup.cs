@@ -39,41 +39,19 @@ namespace TestApi.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
             services.AddMvcCore();
             services.AddDbContext<TestApiDbContext>(opt => opt.UseSqlServer(
                 Configuration.GetConnectionString("TestApiDbContext"),
                 x => x.MigrationsAssembly(typeof(Card).Assembly.FullName)));
             services.RegisterAllRepository();
             services.AddTransient<IDeckBuilder, DeckBuilder>();
-            services.AddAutoMapper(cfg =>
+            services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
+            services.AddControllers().AddNewtonsoftJson(options =>
             {
-                cfg.CreateMap<Card, CardDto>();
-                cfg.CreateMap<CardInDeck, CardDto>()
-                    .ForMember(x => x.Suit,
-                        opt => opt.MapFrom(x => x.Card.Suit))
-                    .ForMember(x => x.Rank,
-                        opt => opt.MapFrom(x => x.Card.Rank));
-                cfg.CreateMap<Deck, DeckDto>()
-                    .ForMember(x => x.Id,
-                        opt => opt.MapFrom(x => x.Key))
-                    .ForMember(x => x.Card,
-                        opt => opt
-                            .MapFrom((deck, deckDto, i, context) => deck.CardInDecks
-                                .OrderBy(cd => cd.NumberInDeck)
-                                .Select(c => context.Mapper.Map<CardDto>(c))));
-                cfg.CreateMap<Deck, GetDecksDto>()
-                    .ForMember(x => x.Id,
-                        opt => opt.MapFrom(x => x.Key));
-            });
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Test Api", Version = "v1"}); });
-
-            services.AddMvc().AddJsonOptions(options =>
-            {
-                options.JsonSerializerOptions = DefaultValueHandling.Populate;
                 options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 options.SerializerSettings.Converters.Add(new StringEnumConverter());
-            })
+            });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Test Api", Version = "v1"}); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

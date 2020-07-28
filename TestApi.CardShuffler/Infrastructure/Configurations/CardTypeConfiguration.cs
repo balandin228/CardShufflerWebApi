@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
@@ -15,9 +16,11 @@ namespace TestApi.Core.Infrastructure.Configurations
             builder.ToTable("Cards");
             builder.HasKey(x => x.Key);
             builder.Property(x => x.Key).HasColumnName("Id");
-            builder.HasAlternateKey(x=>new {x.Suit, x.Rank});
+            builder.Property(x => x.Suit).HasColumnName("Suit");
+            builder.Property(x => x.Rank).HasColumnName("Rank");
+            builder.HasAlternateKey(x=>new {x.Rank, x.Suit});
 
-            builder.HasData(GetDefaultDeck());
+            builder.HasData(GetDefaultDeck().ToList());
         }
 
         private IEnumerable<Card> GetDefaultDeck()
@@ -26,7 +29,7 @@ namespace TestApi.Core.Infrastructure.Configurations
             for (var i = 0; i < 14; i++)
             for (var j = 0; j < 4; j++)
             {
-                yield return new Card(id,(CardSuit) i, (CardRank) j);
+                yield return new Card(id,(CardSuit) j, (CardRank) i);
                 id++;
             }
         }

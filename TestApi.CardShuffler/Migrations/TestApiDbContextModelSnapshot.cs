@@ -27,14 +27,16 @@ namespace TestApi.Core.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Rank")
+                        .HasColumnName("Rank")
                         .HasColumnType("int");
 
                     b.Property<int>("Suit")
+                        .HasColumnName("Suit")
                         .HasColumnType("int");
 
                     b.HasKey("Key");
 
-                    b.HasAlternateKey("Suit", "Rank");
+                    b.HasAlternateKey("Rank", "Suit");
 
                     b.ToTable("Cards");
 
@@ -48,26 +50,26 @@ namespace TestApi.Core.Migrations
                         new
                         {
                             Key = 2L,
-                            Rank = 1,
-                            Suit = 0
+                            Rank = 0,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 3L,
-                            Rank = 2,
-                            Suit = 0
+                            Rank = 0,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 4L,
-                            Rank = 3,
-                            Suit = 0
+                            Rank = 0,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 5L,
-                            Rank = 0,
-                            Suit = 1
+                            Rank = 1,
+                            Suit = 0
                         },
                         new
                         {
@@ -78,26 +80,26 @@ namespace TestApi.Core.Migrations
                         new
                         {
                             Key = 7L,
-                            Rank = 2,
-                            Suit = 1
+                            Rank = 1,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 8L,
-                            Rank = 3,
-                            Suit = 1
+                            Rank = 1,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 9L,
-                            Rank = 0,
-                            Suit = 2
+                            Rank = 2,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 10L,
-                            Rank = 1,
-                            Suit = 2
+                            Rank = 2,
+                            Suit = 1
                         },
                         new
                         {
@@ -108,26 +110,26 @@ namespace TestApi.Core.Migrations
                         new
                         {
                             Key = 12L,
-                            Rank = 3,
-                            Suit = 2
+                            Rank = 2,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 13L,
-                            Rank = 0,
-                            Suit = 3
+                            Rank = 3,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 14L,
-                            Rank = 1,
-                            Suit = 3
+                            Rank = 3,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 15L,
-                            Rank = 2,
-                            Suit = 3
+                            Rank = 3,
+                            Suit = 2
                         },
                         new
                         {
@@ -138,242 +140,242 @@ namespace TestApi.Core.Migrations
                         new
                         {
                             Key = 17L,
-                            Rank = 0,
-                            Suit = 4
+                            Rank = 4,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 18L,
-                            Rank = 1,
-                            Suit = 4
+                            Rank = 4,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 19L,
-                            Rank = 2,
-                            Suit = 4
+                            Rank = 4,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 20L,
-                            Rank = 3,
-                            Suit = 4
+                            Rank = 4,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 21L,
-                            Rank = 0,
-                            Suit = 5
+                            Rank = 5,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 22L,
-                            Rank = 1,
-                            Suit = 5
+                            Rank = 5,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 23L,
-                            Rank = 2,
-                            Suit = 5
+                            Rank = 5,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 24L,
-                            Rank = 3,
-                            Suit = 5
+                            Rank = 5,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 25L,
-                            Rank = 0,
-                            Suit = 6
+                            Rank = 6,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 26L,
-                            Rank = 1,
-                            Suit = 6
+                            Rank = 6,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 27L,
-                            Rank = 2,
-                            Suit = 6
+                            Rank = 6,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 28L,
-                            Rank = 3,
-                            Suit = 6
+                            Rank = 6,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 29L,
-                            Rank = 0,
-                            Suit = 7
+                            Rank = 7,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 30L,
-                            Rank = 1,
-                            Suit = 7
+                            Rank = 7,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 31L,
-                            Rank = 2,
-                            Suit = 7
+                            Rank = 7,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 32L,
-                            Rank = 3,
-                            Suit = 7
+                            Rank = 7,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 33L,
-                            Rank = 0,
-                            Suit = 8
+                            Rank = 8,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 34L,
-                            Rank = 1,
-                            Suit = 8
+                            Rank = 8,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 35L,
-                            Rank = 2,
-                            Suit = 8
+                            Rank = 8,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 36L,
-                            Rank = 3,
-                            Suit = 8
+                            Rank = 8,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 37L,
-                            Rank = 0,
-                            Suit = 9
+                            Rank = 9,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 38L,
-                            Rank = 1,
-                            Suit = 9
+                            Rank = 9,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 39L,
-                            Rank = 2,
-                            Suit = 9
+                            Rank = 9,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 40L,
-                            Rank = 3,
-                            Suit = 9
+                            Rank = 9,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 41L,
-                            Rank = 0,
-                            Suit = 10
+                            Rank = 10,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 42L,
-                            Rank = 1,
-                            Suit = 10
+                            Rank = 10,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 43L,
-                            Rank = 2,
-                            Suit = 10
+                            Rank = 10,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 44L,
-                            Rank = 3,
-                            Suit = 10
+                            Rank = 10,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 45L,
-                            Rank = 0,
-                            Suit = 11
+                            Rank = 11,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 46L,
-                            Rank = 1,
-                            Suit = 11
+                            Rank = 11,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 47L,
-                            Rank = 2,
-                            Suit = 11
+                            Rank = 11,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 48L,
-                            Rank = 3,
-                            Suit = 11
+                            Rank = 11,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 49L,
-                            Rank = 0,
-                            Suit = 12
+                            Rank = 12,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 50L,
-                            Rank = 1,
-                            Suit = 12
+                            Rank = 12,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 51L,
-                            Rank = 2,
-                            Suit = 12
+                            Rank = 12,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 52L,
-                            Rank = 3,
-                            Suit = 12
+                            Rank = 12,
+                            Suit = 3
                         },
                         new
                         {
                             Key = 53L,
-                            Rank = 0,
-                            Suit = 13
+                            Rank = 13,
+                            Suit = 0
                         },
                         new
                         {
                             Key = 54L,
-                            Rank = 1,
-                            Suit = 13
+                            Rank = 13,
+                            Suit = 1
                         },
                         new
                         {
                             Key = 55L,
-                            Rank = 2,
-                            Suit = 13
+                            Rank = 13,
+                            Suit = 2
                         },
                         new
                         {
                             Key = 56L,
-                            Rank = 3,
-                            Suit = 13
+                            Rank = 13,
+                            Suit = 3
                         });
                 });
 

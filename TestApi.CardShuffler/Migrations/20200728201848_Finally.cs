@@ -2,7 +2,7 @@
 
 namespace TestApi.Core.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class Finally : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,13 +12,13 @@ namespace TestApi.Core.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Rank = table.Column<int>(nullable: false),
-                    Suit = table.Column<int>(nullable: false)
+                    Suit = table.Column<int>(nullable: false),
+                    Rank = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cards", x => x.Id);
-                    table.UniqueConstraint("AK_Cards_Suit_Rank", x => new { x.Suit, x.Rank });
+                    table.UniqueConstraint("AK_Cards_Rank_Suit", x => new { x.Rank, x.Suit });
                 });
 
             migrationBuilder.CreateTable(
@@ -67,61 +67,61 @@ namespace TestApi.Core.Migrations
                 values: new object[,]
                 {
                     { 1L, 0, 0 },
-                    { 31L, 2, 7 },
-                    { 32L, 3, 7 },
-                    { 33L, 0, 8 },
-                    { 34L, 1, 8 },
-                    { 35L, 2, 8 },
-                    { 36L, 3, 8 },
-                    { 37L, 0, 9 },
-                    { 38L, 1, 9 },
-                    { 39L, 2, 9 },
-                    { 40L, 3, 9 },
-                    { 41L, 0, 10 },
-                    { 30L, 1, 7 },
-                    { 42L, 1, 10 },
-                    { 44L, 3, 10 },
-                    { 45L, 0, 11 },
-                    { 46L, 1, 11 },
-                    { 47L, 2, 11 },
-                    { 48L, 3, 11 },
-                    { 49L, 0, 12 },
-                    { 50L, 1, 12 },
-                    { 51L, 2, 12 },
-                    { 52L, 3, 12 },
-                    { 53L, 0, 13 },
-                    { 54L, 1, 13 },
-                    { 43L, 2, 10 },
-                    { 29L, 0, 7 },
-                    { 28L, 3, 6 },
-                    { 27L, 2, 6 },
-                    { 2L, 1, 0 },
-                    { 3L, 2, 0 },
-                    { 4L, 3, 0 },
-                    { 5L, 0, 1 },
+                    { 31L, 7, 2 },
+                    { 32L, 7, 3 },
+                    { 33L, 8, 0 },
+                    { 34L, 8, 1 },
+                    { 35L, 8, 2 },
+                    { 36L, 8, 3 },
+                    { 37L, 9, 0 },
+                    { 38L, 9, 1 },
+                    { 39L, 9, 2 },
+                    { 40L, 9, 3 },
+                    { 41L, 10, 0 },
+                    { 30L, 7, 1 },
+                    { 42L, 10, 1 },
+                    { 44L, 10, 3 },
+                    { 45L, 11, 0 },
+                    { 46L, 11, 1 },
+                    { 47L, 11, 2 },
+                    { 48L, 11, 3 },
+                    { 49L, 12, 0 },
+                    { 50L, 12, 1 },
+                    { 51L, 12, 2 },
+                    { 52L, 12, 3 },
+                    { 53L, 13, 0 },
+                    { 54L, 13, 1 },
+                    { 43L, 10, 2 },
+                    { 29L, 7, 0 },
+                    { 28L, 6, 3 },
+                    { 27L, 6, 2 },
+                    { 2L, 0, 1 },
+                    { 3L, 0, 2 },
+                    { 4L, 0, 3 },
+                    { 5L, 1, 0 },
                     { 6L, 1, 1 },
-                    { 7L, 2, 1 },
-                    { 8L, 3, 1 },
-                    { 9L, 0, 2 },
-                    { 10L, 1, 2 },
+                    { 7L, 1, 2 },
+                    { 8L, 1, 3 },
+                    { 9L, 2, 0 },
+                    { 10L, 2, 1 },
                     { 11L, 2, 2 },
-                    { 12L, 3, 2 },
-                    { 13L, 0, 3 },
-                    { 14L, 1, 3 },
-                    { 15L, 2, 3 },
+                    { 12L, 2, 3 },
+                    { 13L, 3, 0 },
+                    { 14L, 3, 1 },
+                    { 15L, 3, 2 },
                     { 16L, 3, 3 },
-                    { 17L, 0, 4 },
-                    { 18L, 1, 4 },
-                    { 19L, 2, 4 },
-                    { 20L, 3, 4 },
-                    { 21L, 0, 5 },
-                    { 22L, 1, 5 },
-                    { 23L, 2, 5 },
-                    { 24L, 3, 5 },
-                    { 25L, 0, 6 },
-                    { 26L, 1, 6 },
-                    { 55L, 2, 13 },
-                    { 56L, 3, 13 }
+                    { 17L, 4, 0 },
+                    { 18L, 4, 1 },
+                    { 19L, 4, 2 },
+                    { 20L, 4, 3 },
+                    { 21L, 5, 0 },
+                    { 22L, 5, 1 },
+                    { 23L, 5, 2 },
+                    { 24L, 5, 3 },
+                    { 25L, 6, 0 },
+                    { 26L, 6, 1 },
+                    { 55L, 13, 2 },
+                    { 56L, 13, 3 }
                 });
 
             migrationBuilder.CreateIndex(

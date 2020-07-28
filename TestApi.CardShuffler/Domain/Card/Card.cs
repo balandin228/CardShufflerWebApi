@@ -8,9 +8,9 @@ namespace TestApi.Core.Domain.Card
     public class Card : Entity<long>, ICard
     {
 
+        public CardSuit Suit { get; }
         public CardRank Rank { get; }
 
-        public CardSuit Suit { get; }
 
         public List<CardInDeck> CardInDecks { get; }
         public Card()
@@ -25,8 +25,8 @@ namespace TestApi.Core.Domain.Card
         }
         public Card(long key,CardSuit suit, CardRank rank): base(key)
         {
-            Rank = rank;
             Suit = suit;
+            Rank = rank;
         }
     }
 }

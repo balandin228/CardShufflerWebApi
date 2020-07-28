@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using TestApi.Core.Domain;
 using TestApi.Core.Domain.Card;
 using TestApi.Core.Domain.Deck;
 using TestApi.Core.Shuffler;
@@ -10,34 +12,40 @@ namespace TestApi.Core.DeckBuilder
     public class DeckBuilder : IDeckBuilder
     {
         private readonly IShuffler _shuffler;
-        public IEnumerable<Card> Cards { get; private set; }
+        private DeckBuilderOptions Options { get; set; }
+        public List<CardInMemory> Cards { get; private set; }
         public DeckBuilder()
         {
-            Cards = new DeckBuilderOptions().Deck;
+            Options = new DeckBuilderOptions();
             _shuffler = new DefaultShuffler();
+            Cards = Options.Deck.ToList();
         }
 
         public DeckBuilder(IShuffler shuffler, DeckBuilderOptions options)
         {
-            Cards = options.Deck;
+            Options = options;
+            Cards = Options.Deck.ToList();
             _shuffler = shuffler;
         }
 
-        public IEnumerable<Card> Shuffle()
+        public List<CardInMemory> Shuffle()
         {
-           return _shuffler.Shuffle(Cards);
+           return _shuffler.Shuffle(Cards).ToList();
         }
 
-        public IEnumerable<Card> ChangeDeck(IEnumerable<Card> cards)
+        public List<T> Shuffle<T>(IEnumerable<T> collection)
         {
-            Cards = cards;
+            return _shuffler.Shuffle(collection).ToList();
+        }
+        public List<CardInMemory> CreateDeck()
+        {
+            Cards = Options.Deck.ToList();
             return Cards;
         }
 
-        public IEnumerable<Card> ChangeDeck(DeckBuilderOptions options)
+        public void ChangeOptions(DeckBuilderOptions options)
         {
-            Cards = options.Deck;
-            return Cards;
+            Options = options;
         }
 
     }

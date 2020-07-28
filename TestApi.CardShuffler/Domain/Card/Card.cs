@@ -12,10 +12,10 @@ namespace TestApi.Core.Domain.Card
 
         public CardSuit Suit { get; }
 
-        public IQueryable<CardInDeck> CardInDecks { get; }
+        public List<CardInDeck> CardInDecks { get; }
         public Card()
         {
-
+            CardInDecks = new List<CardInDeck>();
         }
 
         public Card(CardSuit suit, CardRank rank)

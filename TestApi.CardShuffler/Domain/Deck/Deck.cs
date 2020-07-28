@@ -7,11 +7,12 @@ namespace TestApi.Core.Domain.Deck
 {
     public class Deck : Entity<long>, IDeck
     {
-        public IQueryable<CardInDeck> CardInDecks { get; }
+        public virtual List<CardInDeck> CardInDecks { get; }
         public string Name { get; }
 
         public Deck()
         {
+            CardInDecks = new List<CardInDeck>();
         }
 
         public Deck(string name)

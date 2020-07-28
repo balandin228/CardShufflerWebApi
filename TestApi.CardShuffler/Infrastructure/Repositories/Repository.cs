@@ -13,7 +13,7 @@ namespace TestApi.Core.Infrastructure.Repositories
     {
         public TestApiDbContext Context { get; }
         private DbSet<TEntity> _items { get; }
-        public virtual IQueryable<TEntity> Items => _items;
+        protected virtual IQueryable<TEntity> Items => _items;
         protected Repository(TestApiDbContext context)
         {
             Context = context;
@@ -47,6 +47,10 @@ namespace TestApi.Core.Infrastructure.Repositories
             return Items.ToArrayAsync();
         }
 
+        public Task<TEntity[]> ListAsync(Expression<Func<TEntity, bool>> options)
+        {
+            return Items.Where(options).ToArrayAsync();
+        }
         public Task<TEntity> FirstAsync()
         {
             return Items.FirstAsync();
@@ -65,6 +69,13 @@ namespace TestApi.Core.Infrastructure.Repositories
         public Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> options)
         {
             return Items.FirstOrDefaultAsync(options);
+        }
+
+        public Task<TEntity[]> GetWithInclude(params Expression<Func<TEntity, object>>[] options)
+        {
+            return options.Aggregate(Items,
+                (current, includeOptions) => current.Include(includeOptions)).ToArrayAsync();
+
         }
     }
 }

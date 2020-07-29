@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using TestApi.Core.DeckBuilder;
 using TestApi.Core.Domain;
 using TestApi.Core.Domain.Deck;
@@ -35,7 +39,11 @@ namespace TestApi.Web.Controllers
 
 
 
-
+        /// <summary>
+        /// Удалить колоду
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("Decks/{id}/Delete")]
         [ProducesResponseType(200)]
@@ -114,25 +122,40 @@ namespace TestApi.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("CreateDeck")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
         public async Task<ActionResult> CreateDeck(string name)
         {
-            var deckInMemory = _deckBuilder.CreateDeck();
             var deck = new Deck(name);
-            await _deckRepository.AddAsync(deck);
-            await _deckRepository.Context.SaveChangesAsync();
-            var i = 1;
-            var toAdd = new List<CardInDeck>();
-            foreach (var cardInMemory in deckInMemory)
+            try
             {
-                var card = await _cardRepository.FirstAsync(x =>
-                    x.Suit == cardInMemory.Suit && x.Rank == cardInMemory.Rank);
-                toAdd.Add(new CardInDeck {CardId = card.Key, DeckId = deck.Key, NumberInDeck = i});
-                i++;
-            }
+                var deckInMemory = _deckBuilder.CreateDeck();
+                await _deckRepository.AddAsync(deck);
+                await _deckRepository.Context.SaveChangesAsync();
+                var i = 1;
+                var toAdd = new List<CardInDeck>();
+                foreach (var cardInMemory in deckInMemory)
+                {
+                    var card = await _cardRepository.FirstAsync(x =>
+                        x.Suit == cardInMemory.Suit && x.Rank == cardInMemory.Rank);
+                    toAdd.Add(new CardInDeck {CardId = card.Key, DeckId = deck.Key, NumberInDeck = i});
+                    i++;
+                }
 
-            await _cardInDeckRepository.AddRangeAsync(toAdd);
-            await _cardInDeckRepository.Context.SaveChangesAsync();
-            return Ok();
+                await _cardInDeckRepository.AddRangeAsync(toAdd);
+                await _cardInDeckRepository.Context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (DbUpdateException)
+            {
+                return base.BadRequest($"Deck {name} already exist");
+            }
+            catch (Exception)
+            {
+                await _deckRepository.RemoveAsync(deck);
+                return StatusCode(StatusCodes.Status500InternalServerError, "Sorry");
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace TestApi.Web
             services.AddMvcCore();
             services.AddDbContext<TestApiDbContext>(opt => opt.UseSqlServer(
                 Configuration.GetConnectionString("TestApiDbContext"),
-                x => x.MigrationsAssembly(typeof(Card).Assembly.FullName)));
+                x => x.MigrationsAssembly(typeof(TestApiDbContext).Assembly.FullName)));
             services.RegisterAllRepository();
             services.AddTransient<IDeckBuilder, DeckBuilder>();
             services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());

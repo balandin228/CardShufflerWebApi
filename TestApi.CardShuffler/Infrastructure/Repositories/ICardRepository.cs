@@ -2,7 +2,7 @@
 
 namespace TestApi.Core.Infrastructure.Repositories
 {
-    public interface ICardRepository : IRepository<Card>
+    public interface ICardRepository : IReadOnlyRepository<Card>
     {
     }
 }

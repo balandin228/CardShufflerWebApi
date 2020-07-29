@@ -20,6 +20,7 @@ namespace TestApi.Web.Controllers
         private readonly IDeckBuilder _deckBuilder;
         private readonly IDeckRepository _deckRepository;
         private readonly IMapper _mapper;
+        private const string NotFoundMessege = "Deck is not found";
 
         public DeckController(IDeckRepository deckRepository, ICardInDeckRepository cardInDeckRepository,
             IDeckBuilder deckBuilder,
@@ -32,6 +33,24 @@ namespace TestApi.Web.Controllers
             _mapper = mapper;
         }
 
+
+
+
+        [HttpDelete]
+        [Route("Decks/{id}/Delete")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult> DeleteDeck(long id)
+        {
+            var deck = await _deckRepository.FirstOrDefaultAsync(x => x.Key == id);
+            if (deck is null)
+                return NotFound(NotFoundMessege);
+            await _deckRepository.RemoveAsync(deck);
+            await _deckRepository.Context.SaveChangesAsync();
+            return Ok();
+        }
+
+        
         /// <summary>
         ///     Показать карты колоды
         /// </summary>
@@ -39,10 +58,14 @@ namespace TestApi.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("Decks/{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         public async Task<ActionResult<DeckDto>> GetDeckById(long id)
         {
-            var deck = await _deckRepository.FirstAsync(x => x.Key == id);
-            return _mapper.Map<DeckDto>(deck);
+            var deck = await _deckRepository.FirstOrDefaultAsync(x => x.Key == id);
+            if (deck is null)
+                return NotFound(NotFoundMessege);
+            return  _mapper.Map<DeckDto>(deck);
         }
 
         /// <summary>
@@ -52,9 +75,13 @@ namespace TestApi.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("Decks/{id}/Shuffle")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         public async Task<ActionResult<DeckDto>> ShuffleDeck(long id)
         {
-            var deck = await _deckRepository.FirstAsync(x => x.Key == id);
+            var deck = await _deckRepository.FirstOrDefaultAsync(x => x.Key == id);
+            if (deck is null)
+                return NotFound(NotFoundMessege);
             var notShuffled = deck.CardInDecks;
 
             var shuffledIndexes = _deckBuilder.Shuffle(notShuffled.Select(x => x.NumberInDeck));
@@ -64,7 +91,6 @@ namespace TestApi.Web.Controllers
                 cardInDeck.NumberInDeck = shuffledIndexes[i];
                 ++i;
             }
-
             await _cardInDeckRepository.Context.SaveChangesAsync();
             return _mapper.Map<DeckDto>(deck);
         }

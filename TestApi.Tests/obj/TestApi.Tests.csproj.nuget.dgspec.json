@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Tests\\TestApi.Tests.csproj": {}
+    "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.Tests\\TestApi.Tests.csproj": {}
   },
   "projects": {
-    "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj",
         "projectName": "TestApi.Core",
-        "projectPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj",
-        "packagesPath": "C:\\Users\\79090\\.nuget\\packages\\",
-        "outputPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.CardShuffler\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\79090\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,21 +75,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Tests\\TestApi.Tests.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.Tests\\TestApi.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Tests\\TestApi.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.Tests\\TestApi.Tests.csproj",
         "projectName": "TestApi.Tests",
-        "projectPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Tests\\TestApi.Tests.csproj",
-        "packagesPath": "C:\\Users\\79090\\.nuget\\packages\\",
-        "outputPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Tests\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.Tests\\TestApi.Tests.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\79090\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,8 +105,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj": {
-                "projectPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj"
+              "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj": {
+                "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj"
               }
             }
           }
@@ -146,7 +152,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

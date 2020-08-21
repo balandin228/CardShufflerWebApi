@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\admin\.nuget\packages\microsoft.net.test.sdk\16.6.1\build\netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\admin\.nuget\packages\microsoft.testplatform.testhost\16.6.1\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\admin\.nuget\packages\microsoft.testplatform.testhost\16.6.1\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\admin\.nuget\packages\nunit3testadapter\4.0.0-alpha.1\build\netcoreapp2.1\nunit.engine.api.dll" t="Include" />
+    <e p="C:\Users\admin\.nuget\packages\nunit3testadapter\4.0.0-alpha.1\build\netcoreapp2.1\nunit.engine.core.dll" t="Include" />
+    <e p="C:\Users\admin\.nuget\packages\nunit3testadapter\4.0.0-alpha.1\build\netcoreapp2.1\nunit.engine.dll" t="Include" />
+    <e p="C:\Users\admin\.nuget\packages\nunit3testadapter\4.0.0-alpha.1\build\netcoreapp2.1\NUnit3.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\admin\.nuget\packages\nunit3testadapter\4.0.0-alpha.1\build\netcoreapp2.1\NUnit3.TestAdapter.pdb" t="Include" />
+    <e p="C:\Users\admin\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\admin\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_TestApi.215131044.00" t="ExcludeRecursive" />
+    <e p="C:\Users\admin\Documents\GitHub\CardShufflerWebApi" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="TestApi.CardShuffler" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DeckBuilder" t="Include">
+          <e p="DeckBuilder.cs" t="Include" />
+          <e p="DeckBuilderOptions.cs" t="Include" />
+          <e p="DeckType.cs" t="Include" />
+          <e p="IDeckBuilder.cs" t="Include" />
+        </e>
+        <e p="Domain" t="Include">
+          <e p="Card" t="Include">
+            <e p="Card.cs" t="Include" />
+            <e p="CardRank.cs" t="Include" />
+            <e p="CardSuit.cs" t="Include" />
+            <e p="ICard.cs" t="Include" />
+          </e>
+          <e p="CardInDeck.cs" t="Include" />
+          <e p="CardInMemory.cs" t="Include" />
+          <e p="Deck" t="Include">
+            <e p="Deck.cs" t="Include" />
+            <e p="IDeck.cs" t="Include" />
+          </e>
+          <e p="Entity.cs" t="Include" />
+        </e>
+        <e p="Infrastructure" t="Include">
+          <e p="Configurations" t="Include">
+            <e p="CardInDeckTypeConfiguration.cs" t="Include" />
+            <e p="CardTypeConfiguration.cs" t="Include" />
+            <e p="DeckTypeConfiguration.cs" t="Include" />
+          </e>
+          <e p="Repositories" t="Include">
+            <e p="CardInDeckRepository.cs" t="Include" />
+            <e p="CardRepository.cs" t="Include" />
+            <e p="DeckRepository.cs" t="Include" />
+            <e p="ICardInDeckRepository.cs" t="Include" />
+            <e p="ICardRepository.cs" t="Include" />
+            <e p="IDeckRepository.cs" t="Include" />
+            <e p="IReadOnlyRepository.cs" t="Include" />
+            <e p="IRepository.cs" t="Include" />
+            <e p="Repository.cs" t="Include" />
+          </e>
+          <e p="TestApiDbContext.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20200728210751_Finally.cs" t="Include" />
+          <e p="20200728210751_Finally.Designer.cs" t="Include" />
+          <e p="TestApiDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="TestApi.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Shuffler" t="Include">
+          <e p="DefaultShuffler.cs" t="Include" />
+          <e p="FisherYatesAlgorithm.cs" t="Include" />
+          <e p="IShuffleAlgorithm.cs" t="Include" />
+          <e p="IShuffler.cs" t="Include" />
+          <e p="IShufflerT.cs" t="Include" />
+          <e p="Shuffler.cs" t="Include" />
+        </e>
+        <e p="TestApi.Core.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="TestApi.sln" t="IncludeFlat" />
+      <e p="TestApi.Tests" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DeckBuilderTests.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="TestApi.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ShufflerTests.cs" t="Include" />
+        <e p="TestApi.Tests.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="TestApi.Web" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="DeckController.cs" t="Include" />
+        </e>
+        <e p="Dtos" t="Include">
+          <e p="CardDto.cs" t="Include" />
+          <e p="DeckDto.cs" t="Include" />
+          <e p="GetDecksDto.cs" t="Include" />
+        </e>
+        <e p="MappingProfile.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="TestApi.Web.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="ServicesExtentions.cs" t="Include" />
+        <e p="Startup.cs" t="Include" />
+        <e p="TestApi.Web.csproj" t="IncludeRecursive" />
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

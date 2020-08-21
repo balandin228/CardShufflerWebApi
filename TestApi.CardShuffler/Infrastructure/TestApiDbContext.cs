@@ -18,7 +18,6 @@ namespace TestApi.Core.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ForSqlServerUseIdentityColumns();
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(TestApiDbContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }

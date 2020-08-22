@@ -5406,23 +5406,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\79090\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.Web\\TestApi.Web.csproj",
+      "projectUniqueName": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Web\\TestApi.Web.csproj",
       "projectName": "TestApi.Web",
-      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.Web\\TestApi.Web.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.Web\\obj\\",
+      "projectPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Web\\TestApi.Web.csproj",
+      "packagesPath": "C:\\Users\\79090\\.nuget\\packages\\",
+      "outputPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.Web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\79090\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5435,8 +5431,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj": {
-              "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj"
+            "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj": {
+              "projectPath": "F:\\Programming\\Github\\OOP\\CardShufflerWebApi\\TestApi.CardShuffler\\TestApi.Core.csproj"
             }
           }
         }
@@ -5505,7 +5501,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
